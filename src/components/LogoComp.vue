@@ -1,4 +1,6 @@
-<script setup></script>
+<script setup>
+</script>
+
 <template>
     <div class="logo">
         <slot>
@@ -9,7 +11,8 @@
 
 <style scoped>
 .logo {
-    font-family: "CormorantGaramond";
+    color: var(--edna-brown, #2D1B0D);
+    font-family: "Cormorant Garamond";
     font-size: 46px;
     font-style: normal;
     font-weight: 300;
@@ -17,5 +20,12 @@
     letter-spacing: -2px;
     text-transform: uppercase;
     height: 32px;
+}
+
+@media( max-width: 768px) {
+    .logo {
+        position: relative;
+        z-index: 20;
+    }
 }
 </style>

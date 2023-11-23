@@ -1,4 +1,21 @@
 @font-face {
-    font-family: 'CormorantGaramond';
-    src: url(./CormorantGaramond-Light.ttf) format('woff2');
+    font-family: 'Cormorant Garamond';
+    src: url(./CormorantGaramond-Light.woff2) format('woff2'),
+        url(./CormorantGaramond-Light.ttf) format("truetype");
+        color: lime !important;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url(./HelveticaNeueRegular.woff2) format('woff2'),
+        url(./HelveticaNeueRegular.ttf) format("truetype");
+    font-weight: 400;
+    color: lime !important;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url(./HelveticaNeueMedium.woff2) format('woff2'),
+        url(./HelveticaNeueMedium.ttf) format("truetype");
+    font-weight: 500;
 }

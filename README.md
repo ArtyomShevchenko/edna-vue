@@ -33,3 +33,5 @@ npm run build
 ```sh
 npm run lint
 ```
+
+## Searce [Figma] (<https://www.figma.com/file/4gNEwwEi2CiEXW3IvPNJeG/EDNA-(Copy)-(Copy)?node-id=352%3A572&mode=dev>)

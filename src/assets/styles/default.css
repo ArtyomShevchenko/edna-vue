@@ -1,3 +1,32 @@
+/* styling swiper */
+:root {
+    --swiper-pagination-color: #fff;
+    --swiper-pagination-bullet-size: 6px;
+    --swiper-pagination-bullet-width: 6px;
+    --swiper-pagination-bullet-height: 6px;
+    --swiper-pagination-bullet-inactive-color: #fff;
+    --swiper-pagination-bullet-inactive-opacity: 0.2;
+    --swiper-pagination-bullet-opacity: 1;
+    --swiper-pagination-bullet-horizontal-gap: 8px;
+    --swiper-pagination-bullet-vertical-gap: 6px;
+}
+
+/* styling query swiper */
+@media(max-width: 550px) {
+    :root {
+        --swiper-pagination-color: #fff;
+        --swiper-pagination-bullet-size: 4px;
+        --swiper-pagination-bullet-width: 4px;
+        --swiper-pagination-bullet-height: 4px;
+        --swiper-pagination-bullet-inactive-color: #fff;
+        --swiper-pagination-bullet-inactive-opacity: 0.2;
+        --swiper-pagination-bullet-opacity: 1;
+        --swiper-pagination-bullet-horizontal-gap: 8px;
+        --swiper-pagination-bullet-vertical-gap: 6px;
+    }
+}
+
+
 * {
     color: var(--edna-dark-brown, #210803);
     font-family: "Helvetica Neue";
@@ -27,7 +56,8 @@ h2 {
     text-transform: uppercase;
 }
 
-h3 {
+h3,
+.subtitle {
     color: var(--edna-dark-red, #B31719);
     font-family: "Helvetica Neue";
     font-size: 12px;
@@ -58,10 +88,11 @@ button {
     background: var(--edna-dark-red, #B31719);
     color: var(--edna-light, #F6F5F1);
     cursor: pointer;
+    transition: all .2s;
 }
 
 button:hover {
-    background: red;
+    background-color: var(--edna-dark-brown, #210803);
 }
 
 a {
@@ -81,13 +112,28 @@ a:hover {
     color: var(--edna-dark-red, #B31719);
 }
 
-.wrapper {
+*[class*="__wrapper"] {
     max-width: 1300px;
     padding: 0 10px;
     margin: 0 auto;
 }
 
+*[class*="__container"] {
+    padding: 80px 0;
+    width: 100%;
+}
+
+.disable-scroll {
+    height: 100%;
+    overflow: hidden;
+}
+
 @media (max-width: 768px) {
+    *[class*="__wrapper"] {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
     h2 {
         color: var(--edna-dark-brown, #210803);
         font-family: "Cormorant Garamond";
@@ -97,11 +143,6 @@ a:hover {
         line-height: 38px;
         text-transform: uppercase;
         letter-spacing: -1px;
-    }
-
-    .wrapper {
-        padding-left: 0;
-        padding-right: 0;
     }
 
     .content {

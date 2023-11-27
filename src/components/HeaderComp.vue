@@ -1,35 +1,51 @@
 <script setup>
-import { ref } from "vue"
+import { ref, watch } from "vue"
 import LogoComp from "./LogoComp.vue"
 
 const checked = ref(false)
+
+watch(checked, (newChecked) => {
+    const body = document.querySelector("body")
+    newChecked
+        ? body.classList.add("disable-scroll")
+        : body.classList.remove("disable-scroll")
+
+
+    // window.onscroll = function () { window.scrollTo(0, 0); }; //disable scroll
+    // window.onscroll = function () { }; //eneble scroll
+})
 </script>
 
 <template>
-    <header>
-        <div class="container">
-            <div class="wrapper">
-                <div class="content">
+    <header class="header">
+        <div class="header__container">
+            <div class="header__wrapper">
+                <div class="header-content">
                     <LogoComp />
                     <nav class="menu">
-                        <input type="checkbox" name="" id="" ref="checkbox" v-model="checked">
-                        <div class="burger">
-                            <span></span>
-                            <span></span>
-                            <span></span>
+                        <input class="burget-input" type="checkbox" name="" id="" ref="checkbox" v-model="checked">
+                        <div class="burger-icon">
+                            <span class="burger-icon__line1 burger-icon__line"></span>
+                            <span class="burger-icon__line2 burger-icon__line"></span>
+                            <span class="burger-icon__line3 burger-icon__line"></span>
                         </div>
-                        <div class="menu-items">
-                            <div class="box">
-                                <RouterLink to="/about" v-on:click="checked = !checked">About</RouterLink>
-                                <RouterLink to="/approach" v-on:click="checked = !checked">Approach</RouterLink>
-                                <RouterLink to="/" v-on:click="checked = !checked">Home</RouterLink>
-                                <RouterLink to="/services" v-on:click="checked = !checked">services</RouterLink>
-                                <RouterLink to="/testimonials" v-on:click="checked = !checked">testimonials</RouterLink>
-                                <RouterLink to="/contact" v-on:click="checked = !checked">Contact</RouterLink>
-                                <RouterLink to="/blog" v-on:click="checked = !checked">Blog</RouterLink>
-                                <RouterLink to="/fashion" v-on:click="checked = !checked" class="mark">Fashion styling
+                        <div class="menu-body">
+                            <div class="menu-links">
+                                <RouterLink class="menu-link" to="/about" v-on:click="checked = !checked">About</RouterLink>
+                                <RouterLink class="menu-link" to="/approach" v-on:click="checked = !checked">Approach
                                 </RouterLink>
-                                <a href="https://www.instagram.com/" target="_blank" >
+                                <RouterLink class="menu-link" to="/" v-on:click="checked = !checked">Home</RouterLink>
+                                <RouterLink class="menu-link" to="/services" v-on:click="checked = !checked">services
+                                </RouterLink>
+                                <RouterLink class="menu-link" to="/testimonials" v-on:click="checked = !checked">
+                                    testimonials</RouterLink>
+                                <RouterLink class="menu-link" to="/contact" v-on:click="checked = !checked">Contact
+                                </RouterLink>
+                                <RouterLink class="menu-link" to="/blog" v-on:click="checked = !checked">Blog</RouterLink>
+                                <RouterLink class="menu-link menu-link__mark" to="/fashion" v-on:click="checked = !checked">
+                                    Fashion styling
+                                </RouterLink>
+                                <a class="menu-link menu-link__mark" href="https://www.instagram.com/" target="_blank">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
                                         fill="none">
                                         <g clip-path="url(#clip0_1468_3671)">
@@ -51,7 +67,7 @@ const checked = ref(false)
                                 </a>
                             </div>
                         </div>
-                        <div class="shadow" v-on:click="checked = !checked"></div>
+                        <div class="navigation-shadow" v-on:click="checked = !checked"></div>
                     </nav>
                 </div>
             </div>
@@ -60,11 +76,11 @@ const checked = ref(false)
 </template>
 
 <style scoped>
-.container {
+.header__container {
     padding: 48px 0 40px 0;
 }
 
-.content {
+.header-content {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -79,7 +95,7 @@ const checked = ref(false)
     position: relative;
 }
 
-.menu input[type="checkbox"] {
+.burget-input {
     display: block;
     width: 24px;
     height: 24px;
@@ -92,7 +108,7 @@ const checked = ref(false)
     cursor: pointer;
 }
 
-.menu .burger {
+.burger-icon {
     position: relative;
     top: 50%;
     left: 50%;
@@ -103,33 +119,33 @@ const checked = ref(false)
     height: 14px;
 }
 
-.menu .burger span {
+.burger-icon__line {
     display: block;
     width: 100%;
     height: 2px;
     background-color: #000;
     position: absolute;
-    transition: all .3s;
+    transition: all .1s;
 }
 
-.menu .burger span:nth-child(1) {
+.burger-icon__line1 {
     top: 0%;
 }
 
-.menu .burger span:nth-child(2) {
+.burger-icon__line2 {
     top: 50%;
     transform: translateY(-50%);
 }
 
-.menu .burger span:nth-child(3) {
+.burger-icon__line3 {
     top: 100%;
     transform: translateY(-100%);
 }
 
-.menu .menu-items {
+.menu-body {
     background-color: #fff;
-    padding: 80px 40px 40px 80px;
-    width: 40%;
+    padding: 100px 40px 40px 80px;
+    width: 50%;
     height: 100%;
     position: fixed;
     top: 0;
@@ -142,19 +158,19 @@ const checked = ref(false)
     justify-content: flex-end;
 }
 
-.menu .menu-items .box {
+.menu-links {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     gap: 20px;
+    padding-right: 0;
 }
 
-.menu .menu-items a {
+.menu-link {
     padding: 6px 12px;
     color: var(--edna-dark-beige, #8F7D65);
     /* color: var(--edna-dark-red, #B31719); */
     font-family: "Helvetica Neue";
-    /*font-size: 10px;*/
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -164,56 +180,66 @@ const checked = ref(false)
     transition: color .2s;
 }
 
-.menu .menu-items .mark {
-    color: var(--edna-dark-red, #B31719);
-}
-
-.menu .menu-items a:hover {
+.menu-link:hover {
     color: var(--edna-brown, #2D1B0D);
 }
 
-.menu .shadow {
+*[class*="__mark"] {
+    color: var(--edna-dark-red, #B31719);
+}
+
+*[class*="__mark"]:hover {
+    color: var(--edna-dark-red, #2D1B0D);
+}
+
+.navigation-shadow {
     width: 100vw;
     height: 100vh;
     background-color: #000;
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 4;
+    z-index: 3;
     opacity: 0;
-    transition: opacity .3s;
-    pointer-events: none !important;
+    transition: opacity .2s ease .3s;
+    /*pointer-events: none !important; */
+    visibility: hidden
 }
 
-.menu input[type="checkbox"]:checked~.shadow {
-    opacity: .4;
-    pointer-events: auto !important;
+.burget-input:checked~.navigation-shadow {
+    opacity: .3;
+    visibility: visible;
 }
 
-.menu input[type="checkbox"]:checked~.menu-items {
-    transform: translateX(0%);
+.burget-input:checked~.menu-body {
+    transform: translateX(0);
 }
 
-.menu input[type="checkbox"]:checked~.burger span:nth-child(1) {
+.burget-input:checked~.menu-links {
+    padding-right: calc(100% - 570px);
+}
+
+.burget-input:checked~.burger-icon>.burger-icon__line1 {
     top: 50%;
     transform: translateY(-50%) rotate(45deg);
 }
 
-.menu input[type="checkbox"]:checked~.burger span:nth-child(2) {
+.burget-input:checked~.burger-icon>.burger-icon__line2 {
     transform: translateY(-50%) rotateY(90deg);
 }
 
-.menu input[type="checkbox"]:checked~.burger span:nth-child(3) {
+.burget-input:checked~.burger-icon>.burger-icon__line3 {
     top: 50%;
     transform: translateY(-50%) rotate(-45deg);
 }
 
 @media(max-width: 768px) {
-    .menu .shadow {
+
+    .navigation-shadow {
         display: none;
     }
 
-    .menu .menu-items {
+    .menu-body {
         padding: 120px 0px 20px 0px;
         width: 100%;
         height: 100%;
@@ -228,10 +254,14 @@ const checked = ref(false)
         justify-content: center;
     }
 
-    .menu .menu-items .box {
+    .menu-links {
         align-items: center;
-        overflow:auto;
+        overflow: auto;
         width: 100%;
+    }
+
+    .burget-input:checked~.menu-body .menu-links {
+        padding-right: 0;
     }
 }
 </style>

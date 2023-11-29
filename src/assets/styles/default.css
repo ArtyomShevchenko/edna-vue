@@ -32,7 +32,7 @@
     font-family: "Helvetica Neue";
     font-size: 12px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 400 !important;
     line-height: 150%;
 }
 
@@ -96,20 +96,22 @@ button:hover {
 }
 
 a {
-    color: var(--edna-dark-beige, #8F7D65);
+    /* color: var(--edna-dark-beige, #8F7D65); */
     font-family: "Helvetica Neue";
     font-size: 12px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 100;
     line-height: normal;
     letter-spacing: 0.24px;
-    text-decoration-line: underline;
-    text-transform: uppercase;
-    transition: color .2s;
 }
 
 a:hover {
     color: var(--edna-dark-red, #B31719);
+}
+
+span {
+    font-size: inherit;
+    color: inherit;
 }
 
 *[class*="__wrapper"] {

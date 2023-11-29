@@ -25,8 +25,7 @@
             <div class="enough__wrapper">
                 <div class="enough-content">
                     <swiper :modules="modules" :slides-per-view="1" :space-between="0" :loop="true"
-                        :pagination="{ clickable: true }" :scrollbar="{ draggable: true, enabled: false }"
-                        @swiper="onSwiper" @slideChange="onSlideChange">
+                        :pagination="{ clickable: true }" :scrollbar="{ draggable: true, enabled: false }">
                         <swiper-slide>
                             <div class="enough-body">
                                 <h2 class="enough-title">You are always enough.</h2>
@@ -102,15 +101,7 @@ export default {
         SwiperSlide,
     },
     setup() {
-        const onSwiper = (swiper) => {
-            console.log(swiper);
-        };
-        const onSlideChange = () => {
-            // console.log('slide change');
-        };
         return {
-            onSwiper,
-            onSlideChange,
             modules: [Navigation, Pagination, Scrollbar, A11y],
         };
     },

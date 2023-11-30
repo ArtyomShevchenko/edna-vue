@@ -6,8 +6,7 @@
                     <nav class="card__nav" ref="navContainer">
 
                         <li class="card__nav-item">
-                            <router-link class="card__nav-link" to="/services/guided-shopping">GUIDED
-                                SHOPPING</router-link>
+                            <router-link class="card__nav-link" to="/services/guided-shopping">GUIDED SHOPPING</router-link>
                         </li>
                         <li class="card__nav-item">
                             <router-link class="card__nav-link" to="/services/style-session">STYLE SESSION</router-link>
@@ -16,8 +15,7 @@
                             <router-link class="card__nav-link" to="/services/wardrobe-edit">WARDROBE EDIT</router-link>
                         </li>
                         <li class="card__nav-item">
-                            <router-link class="card__nav-link" to="/services/special-styling">SPECIAL
-                                STYLING</router-link>
+                            <router-link class="card__nav-link" to="/services/special-styling">SPECIAL STYLING</router-link>
                         </li>
 
                         <li class="card__nav-item card__nav-item--cross card__nav-item--active">
@@ -34,49 +32,54 @@
                     <!-- CardGuidedShopping -->
                     <div class="card__body">
                         <div class="card__images-container card__images-container--desctop">
-                            <img src="../assets/images/services-card-1.jpg" class="card__img" alt="image">
+                            <img src="../assets/images/services-card-2.jpg" class="card__img" alt="image">
                         </div>
 
                         <div class="card__images-container card__images-container--mobile">
                             <swiper :modules="modules" :slides-per-view="1" :space-between="0" :loop="true"
                                 :pagination="{ clickable: true }">
                                 <swiper-slide>
-                                    <img src="../assets/images/services-card-1.jpg" class="card__img" alt="image">
+                                    <img src="../assets/images/services-card-2.jpg" class="card__img" alt="image">
                                 </swiper-slide>
                             </swiper>
                         </div>
 
                         <article class="card__content">
-                            <div class="card__person">5h | in person</div>
-                            <div class="card__title">To elevate style confidence & give you a strategy</div>
+                            <div class="card__person">4h | in person</div>
+                            <div class="card__title">
+                                To elevate style confidence & give you a strategy</div>
                             <div>
                                 <p class="card__text">
-                                    It’s easy to get lost among numerous brands, uncertain of what will be
-                                    an investment rather than a disappointment.
+                                    If you’re wondering where to start or have questions challenging you, this is the best
+                                    way
+                                    to address them, e.g.
+                                </p>
+                                <ul class="card__details-list">
+                                    <li class="card__details-list-item">
+                                        how to adapt my wardrobe to a new lifestyle?
+                                    </li>
+                                    <li class="card__details-list-item">
+                                        how to avoid same scenarios when shopping?
+                                    </li>
+                                    <li class="card__details-list-item">
+                                        how to upgrade my looks to endear clients?
+                                    </li>
+                                    <li class="card__details-list-item">
+                                        how to follow fashion but stay true to myself?
+                                    </li>
+                                </ul>
+                                <p class="card__text">
+                                    Through a visual guide I’ll explain how to dress for your body type and navigate current
+                                    styles. I’ll give you a ready to shop personalized wardrobe capsule and recommend brands
+                                    for
+                                    you to have a clear wardrobe strategy and feel relieved and confident on your style
+                                    journey.
+                                </p>
+                                <p class="card__text">
+                                    Tap bellow for more details and booking.
+
                                 </p>
 
-                                <p class="card__text">
-                                    Following my signature approach you’ll get
-                                    exactly what’s needed without stress of missing out.
-
-                                </p>
-                                <p class="card__text">
-                                    You can enjoy some «me time», while I take care of everything. Prior to a session I
-                                    study
-                                    your aesthetic, pre-select the capsule, and plan a shopping route to meet your goals
-                                    &
-                                    budget.
-                                </p>
-                                <p class="card__text">
-                                    Then I take you on a tailor-made shopping tour with my full support & guidance. For,
-                                    in
-                                    the
-                                    end, you feel like its been a well-deserved self-care experience.
-
-                                </p>
-                                <p class="card__text">
-                                    Tap for details and booking.
-                                </p>
                             </div>
                             <button class="card__button">BOOK NOW</button>
 
@@ -86,41 +89,31 @@
                                 <!-- <div class="card__details-title dropbox__title" v-on:click="details = !details">details</div> -->
                                 <div class="dropbox__content">
                                     <div class="card__details-text--center">
-                                        <p>5 hour of in person session</p>
-                                        <p>Pre-selected wardrobe capsule</p>
-                                        <p>Mindful and coordinated purchases</p>
-                                        <p>Effectively invested budget</p>
+                                        <p>2 sessions</p>
+                                        <p>1 style & personality research</p>
+                                        <p>1 mood board</p>
+                                        <p>1 Visual Style Guide - clear style & wardrobe strategy
+                                        </p>
                                     </div>
-
                                     <ul class="card__details-list">
                                         <li class="card__details-list-item">
-                                            You fill out a questionary, share your shopping goals & budget
+                                            You fill out a questionary and pass a style research
                                         </li>
                                         <li class="card__details-list-item">
-                                            I build a shopping strategy, pre-select and book the clothing for the
-                                            shopping
-                                            day
+                                            I define your aesthetics and put together a personal mood board
                                         </li>
                                         <li class="card__details-list-item">
-                                            We meet in person and follow the pre-planned shopping route
+                                            Session One - we meet online to discuss and confirm the mood board | 35 min.
                                         </li>
                                         <li class="card__details-list-item">
-                                            While shopping I teach you self styling techniques personalized for your
-                                            body
-                                            lines
-                                            and appearance
+                                            I create a personalized Visual Style Guide with practical examples, tips and a
+                                            wardrobe capsule sample based on the mood board, your personality & lifestyle.
                                         </li>
                                         <li class="card__details-list-item">
-                                            We finish with new purchases, all coordinated in a wardrobe capsule
-                                            according to
-                                            your aesthetic, personality and lifestyle.
+                                            Session Two - we meet for coaching though the Visual Style Guide and your
+                                            further strategy for solo shopping & wardrobe management | 90 min
                                         </li>
                                     </ul>
-                                    <p>
-                                        For in person guided shopping experience in Milan, London or Paris, please leave
-                                        at
-                                        though a Contact section.
-                                    </p>
                                 </div>
                             </div>
 
@@ -135,8 +128,7 @@
                                                 <img class="user__icon" src="../assets/images/user-1.jpg" alt="User ">
                                                 <h4 class="user__name">Nadiya Maltseva</h4>
                                                 <p class="user__subtitle">Maltseva Consulting</p>
-                                                <p class="user__text">During a stage in my life, I needed to transition
-                                                    from
+                                                <p class="user__text">During a stage in my life, I needed to transition from
                                                     my corporate attire during work
                                                     hours and floral dresses during leisure time...</p>
                                             </div>
@@ -152,8 +144,7 @@
                                                 <img class="user__icon" src="../assets/images/user-3.jpg" alt="User ">
                                                 <h4 class="user__name">Дарья Трофимова</h4>
                                                 <p class="user__subtitle">Психотерапевт</p>
-                                                <p class="user__text">Хочу відзначити в тобі здатність показати та
-                                                    пояснити,
+                                                <p class="user__text">Хочу відзначити в тобі здатність показати та пояснити,
                                                     що одяг -не просто функціональна тканина</p>
                                             </div>
                                         </div>
@@ -179,8 +170,7 @@
                                                             alt="User ">
                                                         <h4 class="user__name">Лемара Ахбаева</h4>
                                                         <p class="user__subtitle">Make Up Artist & Beauty Expert</p>
-                                                        <p class="user__text">Эдна, я выбрала работу с тобой, потому что
-                                                            ты
+                                                        <p class="user__text">Эдна, я выбрала работу с тобой, потому что ты
                                                             внимательна к деталям, очень хорошо
                                                             чувствуешь</p>
                                                     </div>
@@ -191,8 +181,7 @@
                                                             alt="User ">
                                                         <h4 class="user__name">Дарья Трофимова</h4>
                                                         <p class="user__subtitle">Психотерапевт</p>
-                                                        <p class="user__text">Хочу відзначити в тобі здатність показати
-                                                            та
+                                                        <p class="user__text">Хочу відзначити в тобі здатність показати та
                                                             пояснити,
                                                             що одяг -не просто функціональна тканина</p>
                                                     </div>

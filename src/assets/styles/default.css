@@ -80,8 +80,6 @@ h4 {
 
 button {
     display: block;
-    width: 197px;
-    height: 48px;
     padding: 16px 72px;
     text-transform: uppercase;
     border: 0;
@@ -89,6 +87,7 @@ button {
     color: var(--edna-light, #F6F5F1);
     cursor: pointer;
     transition: all .2s;
+    white-space: nowrap;
 }
 
 button:hover {

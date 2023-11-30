@@ -6,8 +6,7 @@
                     <nav class="card__nav" ref="navContainer">
 
                         <li class="card__nav-item">
-                            <router-link class="card__nav-link" to="/services/guided-shopping">GUIDED
-                                SHOPPING</router-link>
+                            <router-link class="card__nav-link" to="/services/guided-shopping">GUIDED SHOPPING</router-link>
                         </li>
                         <li class="card__nav-item">
                             <router-link class="card__nav-link" to="/services/style-session">STYLE SESSION</router-link>
@@ -16,8 +15,7 @@
                             <router-link class="card__nav-link" to="/services/wardrobe-edit">WARDROBE EDIT</router-link>
                         </li>
                         <li class="card__nav-item">
-                            <router-link class="card__nav-link" to="/services/special-styling">SPECIAL
-                                STYLING</router-link>
+                            <router-link class="card__nav-link" to="/services/special-styling">SPECIAL STYLING</router-link>
                         </li>
 
                         <li class="card__nav-item card__nav-item--cross card__nav-item--active">
@@ -34,45 +32,47 @@
                     <!-- CardGuidedShopping -->
                     <div class="card__body">
                         <div class="card__images-container card__images-container--desctop">
-                            <img src="../assets/images/services-card-1.jpg" class="card__img" alt="image">
+                            <img src="../assets/images/services-card-4.jpg" class="card__img" alt="image">
                         </div>
 
                         <div class="card__images-container card__images-container--mobile">
                             <swiper :modules="modules" :slides-per-view="1" :space-between="0" :loop="true"
                                 :pagination="{ clickable: true }">
                                 <swiper-slide>
-                                    <img src="../assets/images/services-card-1.jpg" class="card__img" alt="image">
+                                    <img src="../assets/images/services-card-4.jpg" class="card__img" alt="image">
                                 </swiper-slide>
                             </swiper>
                         </div>
 
                         <article class="card__content">
                             <div class="card__person">5h | in person</div>
-                            <div class="card__title">To elevate style confidence & give you a strategy</div>
+                            <div class="card__title">When time is short but the occasion is special</div>
                             <div>
                                 <p class="card__text">
-                                    It’s easy to get lost among numerous brands, uncertain of what will be
-                                    an investment rather than a disappointment.
+                                    Should you face a particular style quest with no energy to deal with it singly – I’m
+                                    there to support you. Whether you need:
                                 </p>
-
+                                <ul class="card__details-list">
+                                    <li class="card__details-list-item">
+                                        a special occasion or a red carpet look
+                                    </li>
+                                    <li class="card__details-list-item">
+                                        a key speaker image for a business event
+                                    </li>
+                                    <li class="card__details-list-item">
+                                        a preplanned vacation capsule
+                                    </li>
+                                    <li class="card__details-list-item">
+                                        a desired luxury item sourced and delivered for a dear one or yourself
+                                    </li>
+                                    <li class="card__details-list-item">
+                                        personal brand or family photoshoot styling
+                                    </li>
+                                </ul>
                                 <p class="card__text">
-                                    Following my signature approach you’ll get
-                                    exactly what’s needed without stress of missing out.
-
-                                </p>
-                                <p class="card__text">
-                                    You can enjoy some «me time», while I take care of everything. Prior to a session I
-                                    study
-                                    your aesthetic, pre-select the capsule, and plan a shopping route to meet your goals
-                                    &
-                                    budget.
-                                </p>
-                                <p class="card__text">
-                                    Then I take you on a tailor-made shopping tour with my full support & guidance. For,
-                                    in
-                                    the
-                                    end, you feel like its been a well-deserved self-care experience.
-
+                                    With a custom solution to each request, I make sure you feel relaxed and taken care of
+                                    at
+                                    all times.
                                 </p>
                                 <p class="card__text">
                                     Tap for details and booking.
@@ -97,28 +97,24 @@
                                             You fill out a questionary, share your shopping goals & budget
                                         </li>
                                         <li class="card__details-list-item">
-                                            I build a shopping strategy, pre-select and book the clothing for the
-                                            shopping
+                                            I build a shopping strategy, pre-select and book the clothing for the shopping
                                             day
                                         </li>
                                         <li class="card__details-list-item">
                                             We meet in person and follow the pre-planned shopping route
                                         </li>
                                         <li class="card__details-list-item">
-                                            While shopping I teach you self styling techniques personalized for your
-                                            body
+                                            While shopping I teach you self styling techniques personalized for your body
                                             lines
                                             and appearance
                                         </li>
                                         <li class="card__details-list-item">
-                                            We finish with new purchases, all coordinated in a wardrobe capsule
-                                            according to
+                                            We finish with new purchases, all coordinated in a wardrobe capsule according to
                                             your aesthetic, personality and lifestyle.
                                         </li>
                                     </ul>
                                     <p>
-                                        For in person guided shopping experience in Milan, London or Paris, please leave
-                                        at
+                                        For in person guided shopping experience in Milan, London or Paris, please leave at
                                         though a Contact section.
                                     </p>
                                 </div>
@@ -135,8 +131,7 @@
                                                 <img class="user__icon" src="../assets/images/user-1.jpg" alt="User ">
                                                 <h4 class="user__name">Nadiya Maltseva</h4>
                                                 <p class="user__subtitle">Maltseva Consulting</p>
-                                                <p class="user__text">During a stage in my life, I needed to transition
-                                                    from
+                                                <p class="user__text">During a stage in my life, I needed to transition from
                                                     my corporate attire during work
                                                     hours and floral dresses during leisure time...</p>
                                             </div>
@@ -152,8 +147,7 @@
                                                 <img class="user__icon" src="../assets/images/user-3.jpg" alt="User ">
                                                 <h4 class="user__name">Дарья Трофимова</h4>
                                                 <p class="user__subtitle">Психотерапевт</p>
-                                                <p class="user__text">Хочу відзначити в тобі здатність показати та
-                                                    пояснити,
+                                                <p class="user__text">Хочу відзначити в тобі здатність показати та пояснити,
                                                     що одяг -не просто функціональна тканина</p>
                                             </div>
                                         </div>
@@ -179,8 +173,7 @@
                                                             alt="User ">
                                                         <h4 class="user__name">Лемара Ахбаева</h4>
                                                         <p class="user__subtitle">Make Up Artist & Beauty Expert</p>
-                                                        <p class="user__text">Эдна, я выбрала работу с тобой, потому что
-                                                            ты
+                                                        <p class="user__text">Эдна, я выбрала работу с тобой, потому что ты
                                                             внимательна к деталям, очень хорошо
                                                             чувствуешь</p>
                                                     </div>
@@ -191,8 +184,7 @@
                                                             alt="User ">
                                                         <h4 class="user__name">Дарья Трофимова</h4>
                                                         <p class="user__subtitle">Психотерапевт</p>
-                                                        <p class="user__text">Хочу відзначити в тобі здатність показати
-                                                            та
+                                                        <p class="user__text">Хочу відзначити в тобі здатність показати та
                                                             пояснити,
                                                             що одяг -не просто функціональна тканина</p>
                                                     </div>
@@ -202,6 +194,8 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="card__person">5h | in person</div>
                         </article>
                     </div>
                 </div>

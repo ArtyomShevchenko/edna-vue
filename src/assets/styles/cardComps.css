@@ -1,47 +1,14 @@
 .card {}
 
-.card__container {}
+.card__container {
+    padding-top: 66px;
+}
 
 .card__wrapper {}
 
-.card__nav {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 40px;
-}
 
-.card__nav-item {}
-
-.card__nav-item--hidden {
-    display: none;
-}
-
-.card__nav-link {
-    white-space: nowrap;
-    text-transform: uppercase;
-}
-
-.card__nav-link--active {
-    color: var(--edna-dark-red, #B31719);
-    font-family: "Helvetica Neue";
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    letter-spacing: 0.24px;
-    text-decoration-line: underline;
-    text-transform: uppercase;
-}
-
-.card__nav-item--cross {
-    height: 32px;
-    width: 32px;
-    margin-left: auto;
-}
 
 .card__body {
-    margin-top: 48px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
@@ -291,19 +258,6 @@
     .card__content {
         padding-left: 16px;
         padding-right: 16px;
-    }
-
-    .card__nav {
-        padding-left: 16px;
-        padding-right: 16px;
-    }
-
-    .card__nav-item {
-        display: none;
-    }
-
-    .card__nav-item--active {
-        display: block;
     }
 
     .card__body {

@@ -14,16 +14,16 @@ export const routes = [
     }, {
         path: "/about",
         name: "About",
-        component: import("@/views/AboutView.vue")
+        component: () => import("@/views/AboutView.vue")
     }, {
         path: "/approach",
         name: "Approach",
-        component: import("@/views/ApproachView.vue")
+        component: () => import("@/views/ApproachView.vue")
     }, {
     }, {
         path: "/testimonials",
         name: "Testimonials",
-        component: import("@/views/TestimonialsView.vue"),
+        component: () => import("@/views/TestimonialsView.vue"),
         // beforeEnter: (to, from) => {
         //     console.log(to, from)
         //     setTimeout(() => {
@@ -34,10 +34,7 @@ export const routes = [
     }, {
         path: "/fashion",
         name: "Fashion",
-        component: import("@/views/FashionStylingView.vue")
-    }, {
-        path: "/services",
-        name: "Service",
+        component: import("@/views/FashionStylingView.vue"),
         meta: {
             name: "Artyom",
             lastName: "Puida",
@@ -45,22 +42,26 @@ export const routes = [
             dayBirthday: 2,
             mounthBirthday: "january"
         },
+    }, {
+        path: "/services",
+        name: "Service",
+        component: () => import("@/views/ServicesView.vue"),
         children: [{
             path: "guided-shopping",
             name: "GuidedShopping",
-            component: () => import("@/views/GuidedShoppingView.vue"),
+            component: () => import("@/components/CardGuidedShopping.vue"),
         }, {
             path: "style-session",
             name: "StyleSession",
-            component: () => import("@/views/StyleSessionView.vue"),
+            component: () => import("@/components/CardStyleSession.vue"),
         }, {
             path: "wardrobe-edit",
             name: "WardrobeEdit",
-            component: () => import("@/views/WardrobeEditView.vue"),
+            component: () => import("@/components/CardWardrobeEdit.vue"),
         }, {
             path: "/services/special-styling",
             name: "SpecialStyling",
-            component: () => import("@/views/SpecialStylingView.vue"),
+            component: () => import("@/components/CardSpecialStyling.vue"),
         }]
     }, {
         path: '/:pathMatch(.*)*',

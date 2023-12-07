@@ -10,6 +10,7 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@vueuse/core": "^10.7.0",
     "git": "^0.1.5",
     "pinia": "^2.1.7",
     "swiper": "^11.0.5",

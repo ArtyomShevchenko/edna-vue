@@ -3,25 +3,7 @@
         <div class="card__container">
             <div class="card__wrapper">
                 <div class="card__contant">
-                    <nav class="card__nav" ref="navContainer">
-
-                        <li class="card__nav-item">
-                            <router-link class="card__nav-link" to="/services/guided-shopping">GUIDED SHOPPING</router-link>
-                        </li>
-                        <li class="card__nav-item">
-                            <router-link class="card__nav-link" to="/services/style-session">STYLE SESSION</router-link>
-                        </li>
-                        <li class="card__nav-item">
-                            <router-link class="card__nav-link" to="/services/wardrobe-edit">WARDROBE EDIT</router-link>
-                        </li>
-                        <li class="card__nav-item">
-                            <router-link class="card__nav-link" to="/services/special-styling">SPECIAL STYLING</router-link>
-                        </li>
-
-                        <li class="card__nav-item card__nav-item--cross card__nav-item--active">
-                            <ButtonCrossToBack />
-                        </li>
-                    </nav>
+                    <!-- <CardNavigathion /> -->
 
                     <!-- CardGuidedShopping -->
                     <div class="card__body">
@@ -210,10 +192,8 @@
 </template>
 
 <script setup>
+// import CardNavigathion from "@/components/CardNavigathion.vue";
 import "../assets/styles/cardComps.css"
-import { ref, onMounted } from "vue"
-import ButtonCrossToBack from "@/components/ButtonCrossToBack.vue"
-
 
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/vue';
@@ -222,17 +202,6 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 const modules = [Navigation, Pagination, Scrollbar, A11y]
-
-const navContainer = ref(null)
-
-onMounted(() => {
-    for (let item of navContainer.value.children) {
-        if (item.children[0].href == window.location.href.toString()) {
-            item.classList.add("card__nav-item--active")
-            item.querySelector(".card__nav-link").classList.add("card__nav-link--active")
-        }
-    }
-})
 </script>
 
 <style scoped></style>

@@ -1,26 +1,53 @@
-<script setup>
-function getImageUrl(name, ext) {
-    return new URL(`../assets/images/${name}.${ext}`, import.meta.url).href
-}
-</script>
-
 <template>
     <section class="greeting">
         <div class="greeting__container">
             <div class="greeting__wrapper">
-                <div class="greeting-content">
+                <div class="greeting-content" v-if="langStore.lang === 'en'">
                     <div class="greeting-img-container">
                         <img class="greeting-img" :src="getImageUrl('img1', 'jpg')" alt="Girl">
                     </div>
                     <div class="greeting-body">
-                        <h2 class="greeting-title">I help high value woman manifest themselves through style.</h2>
+                        <h2 class="greeting-title">I help high value woman manifest
+                            themselves
+                            through
+                            style.
+                        </h2>
+
                         <button class="greeting-button">book now</button>
+                    </div>
+                </div>
+
+                <div class="greeting-content" v-if="langStore.lang === 'ua'">
+                    <div class="greeting-img-container">
+                        <img class="greeting-img" :src="getImageUrl('img1', 'jpg')" alt="Girl">
+                    </div>
+                    <div class="greeting-body">
+                        <h2 class="greeting-title">Я допомагаю високоцінним жінкам проявити себе через стиль.
+                        </h2>
+
+                        <button class="greeting-button">Зарезервувати</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 </template>
+
+<script setup>
+import { useLangStore } from "@/store/lang"
+const langStore = useLangStore()
+
+
+
+
+
+
+
+
+function getImageUrl(name, ext) {
+    return new URL(`../assets/images/${name}.${ext}`, import.meta.url).href
+}
+</script>
 
 <style>
 .greeting-body {

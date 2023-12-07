@@ -1,27 +1,10 @@
-<script setup>
-import { ref, watch } from "vue"
-import LogoComp from "./LogoComp.vue"
-
-const checked = ref(false)
-
-watch(checked, (newChecked) => {
-    const body = document.querySelector("body")
-    newChecked
-        ? body.classList.add("disable-scroll")
-        : body.classList.remove("disable-scroll")
-
-
-    // window.onscroll = function () { window.scrollTo(0, 0); }; //disable scroll
-    // window.onscroll = function () { }; //eneble scroll
-})
-</script>
-
 <template>
     <header class="header">
         <div class="header__container">
             <div class="header__wrapper">
                 <div class="header-content">
-                    <LogoComp />
+                    <LogoComp class="LogoComp" />
+                    <ChangeLangButton />
                     <nav class="menu">
                         <input class="burget-input" type="checkbox" name="" id="" ref="checkbox" v-model="checked">
                         <div class="burger-icon">
@@ -29,7 +12,10 @@ watch(checked, (newChecked) => {
                             <span class="burger-icon__line2 burger-icon__line"></span>
                             <span class="burger-icon__line3 burger-icon__line"></span>
                         </div>
-                        <div class="menu-body">
+
+
+
+                        <div class="menu-body" v-if="langStore.lang === 'en'">
                             <div class="menu-links">
                                 <RouterLink class="menu-link" to="/about" v-on:click="checked = !checked">About</RouterLink>
                                 <RouterLink class="menu-link" to="/approach" v-on:click="checked = !checked">Approach
@@ -67,6 +53,48 @@ watch(checked, (newChecked) => {
                                 </a>
                             </div>
                         </div>
+
+                        <div class="menu-body" v-if="langStore.lang === 'ua'">
+                            <div class="menu-links">
+                                <RouterLink class="menu-link" to="/about" v-on:click="checked = !checked">Про нас
+                                </RouterLink>
+                                <RouterLink class="menu-link" to="/approach" v-on:click="checked = !checked">Підход до
+                                    клієнта
+                                </RouterLink>
+                                <RouterLink class="menu-link" to="/" v-on:click="checked = !checked">На головну сторінку
+                                </RouterLink>
+                                <RouterLink class="menu-link" to="/services" v-on:click="checked = !checked">послуги
+                                </RouterLink>
+                                <RouterLink class="menu-link" to="/testimonials" v-on:click="checked = !checked">
+                                    відгуки</RouterLink>
+                                <RouterLink class="menu-link" to="/contact" v-on:click="checked = !checked">Контакт
+                                </RouterLink>
+                                <RouterLink class="menu-link" to="/blog" v-on:click="checked = !checked">Блог</RouterLink>
+                                <RouterLink class="menu-link menu-link__mark" to="/fashion" v-on:click="checked = !checked">
+                                    Модна укладка
+                                </RouterLink>
+                                <a class="menu-link menu-link__mark" href="https://www.instagram.com/" target="_blank">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                        fill="none">
+                                        <g clip-path="url(#clip0_1468_3671)">
+                                            <path
+                                                d="M11.3335 1.33333H4.66683C2.82588 1.33333 1.3335 2.82571 1.3335 4.66666V11.3333C1.3335 13.1743 2.82588 14.6667 4.66683 14.6667H11.3335C13.1744 14.6667 14.6668 13.1743 14.6668 11.3333V4.66666C14.6668 2.82571 13.1744 1.33333 11.3335 1.33333Z"
+                                                stroke="#B31719" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path
+                                                d="M10.6668 7.58C10.7491 8.13483 10.6543 8.70148 10.396 9.19935C10.1376 9.69721 9.72889 10.1009 9.22788 10.3531C8.72687 10.6053 8.1591 10.6931 7.60532 10.604C7.05155 10.5148 6.53997 10.2534 6.14336 9.85678C5.74674 9.46016 5.48528 8.94859 5.39618 8.39481C5.30707 7.84104 5.39484 7.27327 5.64701 6.77225C5.89919 6.27124 6.30292 5.8625 6.80079 5.60416C7.29865 5.34583 7.8653 5.25106 8.42013 5.33334C8.98608 5.41726 9.51003 5.68098 9.91459 6.08554C10.3192 6.4901 10.5829 7.01405 10.6668 7.58Z"
+                                                stroke="#B31719" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M11.6665 4.33333H11.6732" stroke="#B31719" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_1468_3671">
+                                                <rect width="16" height="16" fill="white" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
                         <div class="navigation-shadow" v-on:click="checked = !checked"></div>
                     </nav>
                 </div>
@@ -74,6 +102,27 @@ watch(checked, (newChecked) => {
         </div>
     </header>
 </template>
+
+<script setup>
+import { ref, watch } from "vue"
+import LogoComp from "@/components/LogoComp.vue"
+import ChangeLangButton from "@/components/ChangeLangButton.vue"
+import { useLangStore } from "@/store/lang";
+const langStore = useLangStore()
+
+const checked = ref(false)
+
+watch(checked, (newChecked) => {
+    const body = document.querySelector("body")
+    newChecked
+        ? body.classList.add("disable-scroll")
+        : body.classList.remove("disable-scroll")
+
+
+    // window.onscroll = function () { window.scrollTo(0, 0); }; //disable scroll
+    // window.onscroll = function () { }; //eneble scroll
+})
+</script>
 
 <style scoped>
 .header__container {
@@ -83,8 +132,12 @@ watch(checked, (newChecked) => {
 .header-content {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
+}
+
+.LogoComp {
+    margin-right: auto;
 }
 
 /* burger */

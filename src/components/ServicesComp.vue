@@ -1,33 +1,17 @@
-<script >
-// import Swiper core and required modules
+<script setup>
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
-
-// Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from 'swiper/vue';
-
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+const modules = [Navigation, Pagination, Scrollbar, A11y]
 
-// Import Swiper styles
-export default {
-    components: {
-        Swiper,
-        SwiperSlide,
-    },
-    setup() {
-        return {
-            modules: [Navigation, Pagination, Scrollbar, A11y],
-        };
-    },
-};
-
-
+import { useLangStore } from '@/store/lang';
+const langStore = useLangStore()
 </script>
 <template>
-    <section class="services">
+    <section class="services" v-if="langStore.lang === 'en'">
         <div class="services__container">
             <div class="services__wrapper">
                 <div class="services__content">
@@ -112,6 +96,102 @@ export default {
                                             class="services__card-img">
                                         <p class="serviices__card-title">
                                             Special Styling
+                                        </p>
+                                    </div>
+                                </router-link>
+                            </swiper-slide>
+                        </swiper>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" v-if="langStore.lang === 'ua'">
+        <div class="services__container">
+            <div class="services__wrapper">
+                <div class="services__content">
+                    <h3 class="services__title">послуги</h3>
+                    <div class="services__body services__body--desctop">
+                        <router-link to="/services/guided-shopping" class="services__card-link">
+                            <div class="services__card">
+                                <img src="../assets/images/services-card-1.jpg" alt="Image" class="services__card-img">
+                                <p class="serviices__card-title">
+                                    Покупки з гідом
+                                </p>
+                            </div>
+                        </router-link>
+
+                        <router-link to="/services/style-session" class="services__card-link">
+                            <div class="services__card">
+                                <img src="../assets/images/services-card-2.jpg" alt="Image" class="services__card-img">
+                                <p class="serviices__card-title">
+                                    Стильна сесія
+                                </p>
+                            </div>
+                        </router-link>
+                        <router-link to="/services/wardrobe-edit" class="services__card-link">
+                            <div class="services__card">
+                                <img src="../assets/images/services-card-3.jpg" alt="Image" class="services__card-img">
+                                <p class="serviices__card-title">
+                                    Гардероб Редагувати
+                                </p>
+                            </div>
+                        </router-link>
+                        <router-link to="/services/special-styling" class="services__card-link">
+                            <div class="services__card">
+                                <img src="../assets/images/services-card-4.jpg" alt="Image" class="services__card-img">
+                                <p class="serviices__card-title">
+                                    Особливий стиль
+                                </p>
+                            </div>
+                        </router-link>
+                    </div>
+
+                    <div class="services__body services__body--mobile">
+                        <swiper :modules="modules" :slides-per-view="1" :space-between="0" :loop="true"
+                            :pagination="{ clickable: true }">
+                            <swiper-slide>
+                                <router-link to="/services/guided-shopping" class="services__card-link">
+                                    <div class="services__card">
+                                        <img src="../assets/images/services-card-1.jpg" alt="Image"
+                                            class="services__card-img">
+
+                                        <p class="serviices__card-title">
+                                            Покупки з гідом
+                                        </p>
+                                    </div>
+                                </router-link>
+                            </swiper-slide>
+                            <swiper-slide>
+                                <router-link to="/services/style-session" class="services__card-link">
+                                    <div class="services__card">
+                                        <img src="../assets/images/services-card-2.jpg" alt="Image"
+                                            class="services__card-img">
+                                        <p class="serviices__card-title">
+                                            Стильна сесія
+                                        </p>
+                                    </div>
+                                </router-link>
+                            </swiper-slide>
+                            <swiper-slide>
+                                <router-link to="/services/wardrobe-edit" class="services__card-link">
+                                    <div class="services__card">
+                                        <img src="../assets/images/services-card-3.jpg" alt="Image"
+                                            class="services__card-img">
+                                        <p class="serviices__card-title">
+                                            Гардероб Редагувати
+                                        </p>
+                                    </div>
+                                </router-link>
+                            </swiper-slide>
+                            <swiper-slide>
+                                <router-link to="/services/special-styling" class="services__card-link">
+                                    <div class="services__card">
+                                        <img src="../assets/images/services-card-4.jpg" alt="Image"
+                                            class="services__card-img">
+                                        <p class="serviices__card-title">
+                                            Особливий стиль
                                         </p>
                                     </div>
                                 </router-link>

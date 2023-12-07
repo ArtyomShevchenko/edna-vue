@@ -1,66 +1,70 @@
 <template>
-    <section class="approach">
+    <section class="approach" v-if="langStore.lang === 'en'">
         <div class="approach__container">
             <div class="approach__wrapper">
                 <swiper class="swiper" :navigation="{
                     prevEl: prev,
                     nextEl: next,
-                }" :modules="modules" :slides-per-view="1" :space-between="0" :loop="false">
+                }
+                    " :modules="modules" :slides-per-view="1" :space-between="0" :loop="false">
                     <swiper-slide>
-                        <div class="approach_content">
-                            <div class="approach_body">
-                                <h3 class="subtitle">
+                        <div class="approach__content">
+                            <div class="approach__body">
+                                <h3 class="subtitle approach__subtitle"
+                                    :class="{ 'approach__subtitle--hidden ': hiddenTitle }">
                                     MY APPROACH
                                 </h3>
-                                <h2 class="approach_title">
+                                <h2 class="approach__title">
                                     I invest TIme to know the woman in front of me.
                                 </h2>
 
-                                <p class="approach_text">
+                                <p class="approach__text">
                                     I am excited to hear about your story and life experiences that made you who you
                                     are.
                                     Your personality is the foundaHon of a unique style & I’m here to explore it.
                                 </p>
                             </div>
-                            <div class="approach_img-contain">
-                                <img class="approach_img" src="../assets/images/img5.jpg" alt="Image">
+                            <div class="approach__image-container">
+                                <img class="approach__image" src="../assets/images/img5.jpg" alt="Image">
                             </div>
                         </div>
                     </swiper-slide>
                     <swiper-slide>
-                        <div class="approach_content">
-                            <div class="approach_body">
-                                <h3 class="subtitle">
+                        <div class="approach__content">
+                            <div class="approach__body">
+                                <h3 class="subtitle approach__subtitle"
+                                    :class="{ 'approach__subtitle--hidden ': hiddenTitle }">
                                     MY APPROACH
                                 </h3>
-                                <h2 class="approach_title">
+                                <h2 class="approach__title">
                                     Your comfort is a priority.
                                 </h2>
-                                <p class="approach_text">
+                                <p class="approach__text">
                                     I mind the relevance of a look to your social and personal lifestyle. We don’t
                                     pretend to becomfortable, we live for it.
                                 </p>
                             </div>
-                            <div class="approach_img-contain">
-                                <img class="approach_img" src="../assets/images/img6.jpg" alt="Image">
+                            <div class="approach__image-container">
+                                <img class="approach__image" src="../assets/images/img6.jpg" alt="Image">
                             </div>
                         </div>
                     </swiper-slide>
                     <swiper-slide>
-                        <div class="approach_content">
-                            <div class="approach_body">
-                                <h3 class="subtitle">
+                        <div class="approach__content">
+                            <div class="approach__body">
+                                <h3 class="subtitle approach__subtitle"
+                                    :class="{ 'approach__subtitle--hidden ': hiddenTitle }">
                                     MY APPROACH
                                 </h3>
-                                <h2 class="approach_title">
+                                <h2 class="approach__title">
                                     Strive for a sustainable & mindful wardrobe.
                                 </h2>
-                                <p class="approach_text">
+                                <p class="approach__text">
                                     We shop strategically and edit a wardrobe with care – keep what’s dear, yet restyle
                                     it to feel modern & serve your current sense of self.</p>
                             </div>
-                            <div class="approach_img-contain">
-                                <img class="approach_img" src="../assets/images/img7.jpg" alt="Image">
+                            <div class="approach__image-container">
+                                <img class="approach__image" src="../assets/images/img7.jpg" alt="Image">
                             </div>
                         </div>
                     </swiper-slide>
@@ -72,41 +76,119 @@
             </div>
         </div>
     </section>
+
+    <section class="approach" v-if="langStore.lang === 'ua'">
+        <div class="approach__container">
+            <div class="approach__wrapper">
+                <swiper class="swiper" :navigation="{
+                    prevEl: prev,
+                    nextEl: next,
+                }
+                    " :modules="modules" :slides-per-view="1" :space-between="0" :loop="false">
+                    <swiper-slide>
+                        <div class="approach__content">
+                            <div class="approach__body">
+                                <h3 class="subtitle approach__subtitle"
+                                    :class="{ 'approach__subtitle--hidden ': hiddenTitle }">
+                                    МІЙ ПІДХІД
+                                </h3>
+                                <h2 class="approach__title">
+                                    Я витрачаю час на те, щоб знати жінку перед мною.
+                                </h2>
+
+                                <p class="approach__text">
+                                    Мені приємно почути про вашу історію та життєвий досвід, які зробили вас тим, ким ви є
+                                    є.
+                                    Ваша особистість є основою унікального стилю, і я тут, щоб дослідити це.</p>
+                            </div>
+                            <div class="approach__image-container">
+                                <img class="approach__image" src="../assets/images/img5.jpg" alt="Image">
+                            </div>
+                        </div>
+                    </swiper-slide>
+                    <swiper-slide>
+                        <div class="approach__content">
+                            <div class="approach__body">
+                                <h3 class="subtitle approach__subtitle"
+                                    :class="{ 'approach__subtitle--hidden ': hiddenTitle }">
+                                    МІЙ ПІДХІД
+                                </h3>
+                                <h2 class="approach__title">
+                                    Ваш комфорт у пріоритеті.
+                                </h2>
+                                <p class="approach__text">
+                                    Мені важлива відповідність зовнішнього вигляду вашому соціальному та особистому стилю
+                                    життя. Ми цього не робимо
+                                    вдавайте, що нам зручно, ми живемо для цього.
+                                </p>
+                            </div>
+                            <div class="approach__image-container">
+                                <img class="approach__image" src="../assets/images/img6.jpg" alt="Image">
+                            </div>
+                        </div>
+                    </swiper-slide>
+                    <swiper-slide>
+                        <div class="approach__content">
+                            <div class="approach__body">
+                                <h3 class="subtitle approach__subtitle"
+                                    :class="{ 'approach__subtitle--hidden ': hiddenTitle }">
+                                    МІЙ ПІДХІД
+                                </h3>
+                                <h2 class="approach__title">
+                                    Прагніть до надійного та ретельного гардеробу.
+                                </h2>
+                                <p class="approach__text">
+                                    Ми робимо покупки стратегічно та дбайливо редагуємо гардероб – зберігайте те, що дороге,
+                                    але змінюйте стиль
+                                    щоб відчувати себе сучасним і служити своєму поточному самопочуттю.</p>
+                            </div>
+                            <div class="approach__image-container">
+                                <img class="approach__image" src="../assets/images/img7.jpg" alt="Image">
+                            </div>
+                        </div>
+                    </swiper-slide>
+                    <div class="nav-swiper">
+                        <div ref="prev" class="slide-prev">Попередя картка</div>
+                        <div ref="next" class="slide-next">Наступнам картка</div>
+                    </div>
+                </swiper>
+            </div>
+        </div>
+    </section>
 </template>
 
-<script>
-import { ref } from "vue"
-// import Swiper core and required modules
+<script setup>
+import { ref, onMounted } from "vue";
+import { useRoute } from "vue-router"
+const route = useRoute()
+const hiddenTitle = ref(false)
+
+import { useLangStore } from "@/store/lang"
+const langStore = useLangStore()
+
+onMounted(() => {
+    if (route.path === "/approach") {
+        hiddenTitle.value = !hiddenTitle.value
+    }
+})
+
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
-
-// Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from 'swiper/vue';
-
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+const modules = [Navigation, Pagination, Scrollbar, A11y]
 
-// Import Swiper styles
-export default {
-    components: {
-        Swiper,
-        SwiperSlide,
-    },
-    setup() {
-        const prev = ref(null);
-        const next = ref(null);
-        return {
-            modules: [Navigation, Pagination, Scrollbar, A11y],
-            prev,
-            next,
-        };
-    },
-};
+const prev = ref(null);
+const next = ref(null);
 </script>
 
 <style scoped>
+.approach__subtitle--hidden {
+    display: none;
+}
+
 .approach__wrapper {
     overflow: hidden;
 }
@@ -117,12 +199,12 @@ export default {
 
 .approach__wrapper {}
 
-.approach_content {
+.approach__content {
     display: flex;
     gap: 80px;
 }
 
-.approach_body {
+.approach__body {
     margin: 80px 0;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -135,25 +217,25 @@ export default {
 .subtitle {}
 
 
-.approach_title {
+.approach__title {
     grid-column: span 2;
     margin-right: 20px;
 }
 
 
-.approach_text {
+.approach__text {
     max-width: 433px;
 }
 
 
-.approach_img-contain {
+.approach__image-container {
     height: 686px;
     width: 100%;
     max-width: 456px;
     flex: 1 1 auto;
 }
 
-.approach_img {
+.approach__image {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -201,7 +283,7 @@ export default {
         padding: 40px 16px;
     }
 
-    .approach_content {
+    .approach__content {
         display: flex;
         flex-direction: column-reverse;
         gap: 80px;
@@ -209,7 +291,7 @@ export default {
         position: relative;
     }
 
-    .approach_img-contain {
+    .approach__image-container {
         position: absolute;
         width: 50%;
         height: 240px;
@@ -217,7 +299,7 @@ export default {
         top: 40px;
     }
 
-    .approach_body {
+    .approach__body {
         margin: 0;
         display: flex;
         flex-direction: column;

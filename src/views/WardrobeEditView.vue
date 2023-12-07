@@ -19,27 +19,35 @@
                         </li>
 
                         <li class="card__nav-item card__nav-item--cross card__nav-item--active">
-                            <router-link class="card__nav-link" to="/">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="30" viewBox="0 0 32 32"
-                                    fill="none">
-                                    <path d="M24 8L8 24" stroke="#40382D" stroke-linecap="square" stroke-linejoin="round" />
-                                    <path d="M8 8L24 24" stroke="#40382D" stroke-linecap="square" stroke-linejoin="round" />
-                                </svg>
-                            </router-link>
+                            <ButtonCrossToBack />
                         </li>
                     </nav>
 
                     <!-- CardGuidedShopping -->
                     <div class="card__body">
                         <div class="card__images-container card__images-container--desctop">
-                            <img src="../assets/images/services-card-2.jpg" class="card__img" alt="image">
+                            <img src="../assets/images/services-card-3.jpg" class="card__img" alt="image">
+                            <img src="../assets/images/services-card-5.jpg" class="card__img" alt="image">
+                            <img src="../assets/images/services-card-6.jpg" class="card__img card__img--gorizontal"
+                                alt="image">
+                            <img src="../assets/images/services-card-7.jpg" class="card__img" alt="image">
                         </div>
 
                         <div class="card__images-container card__images-container--mobile">
                             <swiper :modules="modules" :slides-per-view="1" :space-between="0" :loop="true"
                                 :pagination="{ clickable: true }">
                                 <swiper-slide>
-                                    <img src="../assets/images/services-card-2.jpg" class="card__img" alt="image">
+                                    <img src="../assets/images/services-card-3.jpg" class="card__img" alt="image">
+                                </swiper-slide>
+                                <swiper-slide>
+                                    <img src="../assets/images/services-card-5.jpg" class="card__img" alt="image">
+                                </swiper-slide>
+                                <swiper-slide>
+                                    <img src="../assets/images/services-card-6.jpg" class="card__img card__img--gorizontal"
+                                        alt="image">
+                                </swiper-slide>
+                                <swiper-slide>
+                                    <img src="../assets/images/services-card-7.jpg" class="card__img" alt="image">
                                 </swiper-slide>
                             </swiper>
                         </div>
@@ -47,39 +55,27 @@
                         <article class="card__content">
                             <div class="card__person">4h | in person</div>
                             <div class="card__title">
-                                To elevate style confidence & give you a strategy</div>
+                                To restore balance and bring the wardrobe in line with how you feel
+                            </div>
                             <div>
                                 <p class="card__text">
-                                    If you’re wondering where to start or have questions challenging you, this is the best
-                                    way
-                                    to address them, e.g.
-                                </p>
-                                <ul class="card__details-list">
-                                    <li class="card__details-list-item">
-                                        how to adapt my wardrobe to a new lifestyle?
-                                    </li>
-                                    <li class="card__details-list-item">
-                                        how to avoid same scenarios when shopping?
-                                    </li>
-                                    <li class="card__details-list-item">
-                                        how to upgrade my looks to endear clients?
-                                    </li>
-                                    <li class="card__details-list-item">
-                                        how to follow fashion but stay true to myself?
-                                    </li>
-                                </ul>
-                                <p class="card__text">
-                                    Through a visual guide I’ll explain how to dress for your body type and navigate current
-                                    styles. I’ll give you a ready to shop personalized wardrobe capsule and recommend brands
-                                    for
-                                    you to have a clear wardrobe strategy and feel relieved and confident on your style
-                                    journey.
+                                    If your clothes don’t serve you anymore because of a new lifestyle, a body change or
+                                    another meaningful experience that makes if all feel different – let’s do a wardrobe
+                                    edit.
                                 </p>
                                 <p class="card__text">
-                                    Tap bellow for more details and booking.
-
+                                    We filter clothes to make room for new beginnings, while keeping and restyling your
+                                    favorites. I’ll help overcome lingering doubts with a clear structure and up to date
+                                    looks reflecting your current self. For you to finally see the beauty and power you have
+                                    always felt inside.
                                 </p>
-
+                                <p class="card__text">
+                                    Further on I’ll guide you with a personal look book and priority items list for a smart
+                                    shopping.
+                                </p>
+                                <p class="card__text">
+                                    Tap for details and booking.
+                                </p>
                             </div>
                             <button class="card__button">BOOK NOW</button>
 
@@ -89,31 +85,45 @@
                                 <!-- <div class="card__details-title dropbox__title" v-on:click="details = !details">details</div> -->
                                 <div class="dropbox__content">
                                     <div class="card__details-text--center">
-                                        <p>2 sessions</p>
-                                        <p>1 style & personality research</p>
-                                        <p>1 mood board</p>
-                                        <p>1 Visual Style Guide - clear style & wardrobe strategy
+                                        <p>
+                                            4 hours in person session
+                                        </p>
+                                        <p>
+                                            1 freshly edited wardrobe
+                                        </p>
+                                        <p>
+                                            1 personal look book of modern looks
+                                        </p>
+                                        <p>
+                                            1 shopping list & clear shopping strategy
                                         </p>
                                     </div>
+
                                     <ul class="card__details-list">
                                         <li class="card__details-list-item">
-                                            You fill out a questionary and pass a style research
+                                            You fill out a questionary and share your current wardrobe situation
                                         </li>
                                         <li class="card__details-list-item">
-                                            I define your aesthetics and put together a personal mood board
+                                            I analyze and build a wardrobe strategy for you
                                         </li>
                                         <li class="card__details-list-item">
-                                            Session One - we meet online to discuss and confirm the mood board | 35 min.
+                                            We meet in person and go though each clothing category within one seasonal
+                                            wardrobe.
                                         </li>
                                         <li class="card__details-list-item">
-                                            I create a personalized Visual Style Guide with practical examples, tips and a
-                                            wardrobe capsule sample based on the mood board, your personality & lifestyle.
+                                            We filter your clothes and create new modern looks which will form your personal
+                                            look book
                                         </li>
                                         <li class="card__details-list-item">
-                                            Session Two - we meet for coaching though the Visual Style Guide and your
-                                            further strategy for solo shopping & wardrobe management | 90 min
+                                            I teach you self styling techniques personalized for your body lines, appearance
+                                            and lifestyle
+                                        </li>
+                                        <li class="card__details-list-item">
+                                            We finish with a comprehensive shopping list and a clear wardrobe strategy for
+                                            your further style journey.
                                         </li>
                                     </ul>
+
                                 </div>
                             </div>
 
@@ -200,7 +210,10 @@
 </template>
 
 <script setup>
+import "../assets/styles/cardComps.css"
 import { ref, onMounted } from "vue"
+import ButtonCrossToBack from "@/components/ButtonCrossToBack.vue"
+
 
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/vue';

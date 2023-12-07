@@ -1,13 +1,13 @@
 <template>
-    <section class="contact-form">
+    <section class="contact-form" v-if="langStorage.lang === 'en'">
         <div class="contact-form__container">
             <div class="contact-form__wrapper">
-                <div class="contact-form__content">
+                <div class="contact-form__content" v-if="!data">
                     <div class="contact-form__image-container">
                         <img src="../assets/images/contact-form.jpg" alt="Image" class="contact-form__img">
                     </div>
 
-                    <div class="contact-form__form-container" v-if="!data">
+                    <div class="contact-form__form-container">
                         <!-- :class="{ 'contact-form__report--container--active': !data }" -->
                         <p class="form__text">To request a discovery call, book a session or get more details, please
                             contact via form bellow</p>
@@ -79,26 +79,174 @@
                             </a>
 
 
-                            <button v-on:click="submitForm" type="submit" class="form__button">send a request</button>
+                            <button v-on:click="submitForm" type="submit" class="form__button-submit">send a
+                                request</button>
                         </div>
                     </div>
+                </div>
 
-                    <div class="contact-form__report-container contact-form__modal-container" v-else>
-                        <div class="contact-form__report contact-form__modal">
-                            {{ data }}
-                        </div>
-                        <div>
-                            <button v-on:click="reset">Send again</button>
+                <div class="contact-form__content--report" v-else>
+                    <div class="contact-form__report-body">
+                        <h2>Thank you!</h2>
+                        <p class="form__text-report">Your request has been successfully sent. Our team will contact you
+                            shorty within an hour.</p>
+                        <div class="form__link-and-button-container">
+                            <a href="edna@shindinde.com" target="_blank" class="form__instagram-link-container">
+                                <span>Follow me via</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                    fill="none">
+                                    <g clip-path="url(#clip0_1325_3153)">
+                                        <path
+                                            d="M11.3335 1.33301H4.66683C2.82588 1.33301 1.3335 2.82539 1.3335 4.66634V11.333C1.3335 13.174 2.82588 14.6663 4.66683 14.6663H11.3335C13.1744 14.6663 14.6668 13.174 14.6668 11.333V4.66634C14.6668 2.82539 13.1744 1.33301 11.3335 1.33301Z"
+                                            stroke="#210803" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path
+                                            d="M10.6668 7.5802C10.7491 8.13503 10.6543 8.70168 10.396 9.19954C10.1376 9.69741 9.72889 10.1011 9.22788 10.3533C8.72687 10.6055 8.1591 10.6933 7.60532 10.6042C7.05155 10.515 6.53997 10.2536 6.14336 9.85698C5.74674 9.46036 5.48528 8.94878 5.39618 8.39501C5.30707 7.84124 5.39484 7.27346 5.64701 6.77245C5.89919 6.27144 6.30292 5.86269 6.80079 5.60436C7.29865 5.34603 7.8653 5.25126 8.42013 5.33353C8.98608 5.41746 9.51003 5.68118 9.91459 6.08574C10.3192 6.4903 10.5829 7.01425 10.6668 7.5802Z"
+                                            stroke="#210803" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M11.6665 4.33301H11.6732" stroke="#210803" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_1325_3153">
+                                            <rect width="16" height="16" fill="white" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <section class="contact-form" v-if="langStorage.lang === 'ua'">
+        <div class="contact-form__container">
+            <div class="contact-form__wrapper">
+                <div class="contact-form__content">
+                    <div class="contact-form__image-container">
+                        <img src="../assets/images/contact-form.jpg" alt="Image" class="contact-form__img">
+                    </div>
+
+                    <div class="contact-form__form-container" v-if="!data">
+                        <!-- :class="{ 'contact-form__report--container--active': !data }" -->
+                        <p class="form__text">Щоб подати запит на відкриття, забронюйте сеанс або отримайте більше деталей,
+                            будь ласка
+                            контакт за формою нижче</p>
+
+
+                        <form action="#" class="form-body" ref="contactForm">
+                            <label class="form__name-container form__label-container">
+                                <span>Імя</span>
+                                <input type="text" name="userName" ref="userName" id="userName" class="form__name">
+                            </label>
+
+                            <label class="form__phone-container  form__label-container">
+                                <span>Телефон</span>
+                                <input type="tel" name="phone" class="form__phone">
+                            </label>
+
+                            <label class="form__email-container  form__label-container">
+                                <span>Електронна пошта</span>
+                                <input type="email" name="email" class="form__email">
+                            </label>
+
+                            <div class="form__contact-container">
+                                <select name="contactUs" class="form__contact" ref="formContact">
+                                    <option value="1" class="form__contact-item">Ви віддаєте перевагу, що ми зв’язуємося з
+                                        вами через</option>
+                                    <option value="2" class="form__contact-item">Я надішлю його вам поштою</option>
+                                    <option value="3" class="form__contact-item">Я подзвоню вам</option>
+                                    <option value="4" class="form__contact-item">Я завітаю до вашого офісу</option>
+                                </select>
+                            </div>
+
+                            <div class="form__services-container">
+                                <select name="services" class="form__services" ref="formServices">
+                                    <option value="1" class="form__services-item">Послуги</option>
+                                    <option value="2" class="form__services-item">Після послуг</option>
+                                    <option value="3" class="form__services-item">Перед послугами</option>
+                                </select>
+                            </div>
+
+                            <label class="form__comment-container form__label-container">
+                                <span>Коментувати</span>
+                                <input type="text" name="comment" class="form__comment">
+                            </label>
+                        </form>
+                        <p class="form__text">
+                            Для інших запитів, якщо бажаєте, зверніться безпосередньо електронною поштою<a
+                                href="mailto:edna@shindinde.com">edna@shindinde.com</a>
+                        </p>
+                        <div class="form__link-and-button-container">
+                            <a href="edna@shindinde.com" target="_blank" class="form__instagram-link-container">
+                                <span>Слідуйте за мною через</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                    fill="none">
+                                    <g clip-path="url(#clip0_1325_3153)">
+                                        <path
+                                            d="M11.3335 1.33301H4.66683C2.82588 1.33301 1.3335 2.82539 1.3335 4.66634V11.333C1.3335 13.174 2.82588 14.6663 4.66683 14.6663H11.3335C13.1744 14.6663 14.6668 13.174 14.6668 11.333V4.66634C14.6668 2.82539 13.1744 1.33301 11.3335 1.33301Z"
+                                            stroke="#210803" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path
+                                            d="M10.6668 7.5802C10.7491 8.13503 10.6543 8.70168 10.396 9.19954C10.1376 9.69741 9.72889 10.1011 9.22788 10.3533C8.72687 10.6055 8.1591 10.6933 7.60532 10.6042C7.05155 10.515 6.53997 10.2536 6.14336 9.85698C5.74674 9.46036 5.48528 8.94878 5.39618 8.39501C5.30707 7.84124 5.39484 7.27346 5.64701 6.77245C5.89919 6.27144 6.30292 5.86269 6.80079 5.60436C7.29865 5.34603 7.8653 5.25126 8.42013 5.33353C8.98608 5.41746 9.51003 5.68118 9.91459 6.08574C10.3192 6.4903 10.5829 7.01425 10.6668 7.5802Z"
+                                            stroke="#210803" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M11.6665 4.33301H11.6732" stroke="#210803" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_1325_3153">
+                                            <rect width="16" height="16" fill="white" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </a>
+
+                            <button v-on:click="submitForm" type="submit" class="form__button-submit">Надіслати
+                                запит</button>
+                        </div>
+                    </div>
+
+                    <div class="contact-form__content--report" v-else>
+                        <div class="contact-form__report-body">
+                            <h2>Дякую вам!</h2>
+                            <p class="form__text-report">Ваш запит успішно надіслано. Наша команда зв’яжеться з вами
+                                протягом
+                                години.</p>
+                            <div class="form__link-and-button-container">
+                                <a href="edna@shindinde.com" target="_blank" class="form__instagram-link-container">
+                                    <span>Слідуйте за мною через</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                        fill="none">
+                                        <g clip-path="url(#clip0_1325_3153)">
+                                            <path
+                                                d="M11.3335 1.33301H4.66683C2.82588 1.33301 1.3335 2.82539 1.3335 4.66634V11.333C1.3335 13.174 2.82588 14.6663 4.66683 14.6663H11.3335C13.1744 14.6663 14.6668 13.174 14.6668 11.333V4.66634C14.6668 2.82539 13.1744 1.33301 11.3335 1.33301Z"
+                                                stroke="#210803" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path
+                                                d="M10.6668 7.5802C10.7491 8.13503 10.6543 8.70168 10.396 9.19954C10.1376 9.69741 9.72889 10.1011 9.22788 10.3533C8.72687 10.6055 8.1591 10.6933 7.60532 10.6042C7.05155 10.515 6.53997 10.2536 6.14336 9.85698C5.74674 9.46036 5.48528 8.94878 5.39618 8.39501C5.30707 7.84124 5.39484 7.27346 5.64701 6.77245C5.89919 6.27144 6.30292 5.86269 6.80079 5.60436C7.29865 5.34603 7.8653 5.25126 8.42013 5.33353C8.98608 5.41746 9.51003 5.68118 9.91459 6.08574C10.3192 6.4903 10.5829 7.01425 10.6668 7.5802Z"
+                                                stroke="#210803" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M11.6665 4.33301H11.6732" stroke="#210803" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_1325_3153">
+                                                <rect width="16" height="16" fill="white" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue"
+import { ref, onMounted, watch } from "vue"
+import { useLangStore } from "@/store/lang";
+const langStorage = useLangStore()
 
 const contactForm = ref(null);
 const data = ref(null);
@@ -131,9 +279,12 @@ function submitForm() {
     createData()
 }
 
-function reset() {
-    data.value = null
-}
+watch(data, () => {
+    setTimeout(() => {
+        data.value = null
+    }, 3000)
+})
+
 </script>
 
 <style scoped>
@@ -207,6 +358,11 @@ input:focus {
     gap: 16px;
 }
 
+.form__text-report {
+    margin-top: 32px;
+    margin-bottom: 24px;
+}
+
 .form__label-container {
     display: flex;
     gap: 24px;
@@ -242,10 +398,24 @@ input:focus {
 
 .form__comment {}
 
+.contact-form__content--report {
+    padding: 16px;
+}
+
+.form__button-submit {
+    padding-inline: 1rem;
+    width: 100%;
+}
+
+.form__button-submit:disabled {
+    background-color: gray;
+    cursor: auto;
+}
+
 .form__link-and-button-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
 }
 
 .form__instagram-link-container {
@@ -260,11 +430,6 @@ input:focus {
     justify-content: center;
     flex-direction: column;
     gap: 24px;
-}
-
-.contact-form__report {
-    padding: 16px;
-    font-size: 16px;
 }
 
 .contact-form__report--container--active {}
@@ -312,7 +477,7 @@ input:focus {
         gap: 24px;
     }
 
-    .form__button {
+    .form__button-submit {
         width: 100%;
     }
 }

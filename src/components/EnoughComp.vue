@@ -1,5 +1,5 @@
 <template>
-    <section class="enough-desktop">
+    <section class="enough-desktop" v-if="langStore.lang === 'en'">
         <div class="enough__container">
             <div class="enough__wrapper">
                 <div class="enough-content">
@@ -20,7 +20,7 @@
         </div>
     </section>
 
-    <section class="enough-mobile">
+    <section class="enough-mobile" v-if="langStore.lang === 'en'">
         <div class="enough__container">
             <div class="enough__wrapper">
                 <div class="enough-content">
@@ -79,33 +79,101 @@
             </div>
         </div>
     </section>
+
+    <section class="enough-desktop" v-if="langStore.lang === 'ua'">
+        <div class="enough__container">
+            <div class="enough__wrapper">
+                <div class="enough-content">
+                    <div class="enough-body">
+                        <h2 class="enough-title">Вам завжди достатньо</h2>
+                        <p class="enough-text">Кожна частинка жінки, кожна її роль однаково важлива і гідна
+                            до
+                            бути побаченим. Не одяг
+                            але ти
+                            є
+                            відправна точка стилю, який слід запам’ятати. Давайте проявимо це...</p>
+                        <img class="enough-img" src="../assets/images/img3.jpg" alt="Bg">
+                    </div>
+                    <div class="enough-img-contain">
+                        <img src="../assets/images/img4.jpg" alt="Hand">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="enough-mobile" v-if="langStore.lang === 'ua'">
+        <div class="enough__container">
+            <div class="enough__wrapper">
+                <div class="enough-content">
+                    <swiper :modules="modules" :slides-per-view="1" :space-between="0" :loop="true"
+                        :pagination="{ clickable: true }" :scrollbar="{ draggable: true, enabled: false }">
+                        <swiper-slide>
+                            <div class="enough-body">
+                                <h2 class="enough-title">Вам завжди достатньо.</h2>
+                                <p class="enough-text">Кожна частинка жінки, кожна її роль однаково важлива і гідна
+                                    до
+                                    бути побаченим. Не одяг
+                                    але ти
+                                    є
+                                    відправна точка стилю, який слід запам’ятати. Давайте проявимо це.</p>
+                                <img class="enough-img" src="../assets/images/img3.jpg" alt="Bg">
+                            </div>
+                        </swiper-slide>
+                        <swiper-slide>
+                            <div class="enough-body">
+                                <h2 class="enough-title"># 2 Вам завжди достатньо.</h2>
+                                <p class="enough-text">Кожна частинка жінки, кожна її роль однаково важлива і гідна
+                                    до
+                                    бути побаченим. Не одяг
+                                    але ти
+                                    є
+                                    відправна точка стилю, який слід запам’ятати. Давайте проявимо це.</p>
+                                <img class="enough-img" src="../assets/images/img4.jpg" alt="Bg">
+                            </div>
+                        </swiper-slide>
+                        <swiper-slide>
+                            <div class="enough-body">
+                                <h2 class="enough-title">#3 Вам завжди достатньо.</h2>
+                                <p class="enough-text">Кожна частинка жінки, кожна її роль однаково важлива і гідна
+                                    до
+                                    бути побаченим. Не одяг
+                                    але ти
+                                    є
+                                    відправна точка стилю, який слід запам’ятати. Давайте проявимо це.</p>
+                                <img class="enough-img" src="../assets/images/img3.jpg" alt="Bg">
+                            </div>
+                        </swiper-slide>
+                        <swiper-slide>
+                            <div class="enough-body">
+                                <h2 class="enough-title">#4 Вам завжди достатньо.</h2>
+                                <p class="enough-text">Кожна частинка жінки, кожна її роль однаково важлива і гідна
+                                    до
+                                    бути побаченим. Не одяг
+                                    але ти
+                                    є
+                                    відправна точка стилю, який слід запам’ятати. Давайте проявимо це.</p>
+                                <img class="enough-img" src="../assets/images/img4.jpg" alt="Bg">
+                            </div>
+                        </swiper-slide>
+                    </swiper>
+                </div>
+            </div>
+        </div>
+    </section>
 </template>
 
-<script>
-// import Swiper core and required modules
+<script setup>
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
-
-// Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from 'swiper/vue';
-
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+const modules = [Navigation, Pagination, Scrollbar, A11y]
 
-// Import Swiper styles
-export default {
-    components: {
-        Swiper,
-        SwiperSlide,
-    },
-    setup() {
-        return {
-            modules: [Navigation, Pagination, Scrollbar, A11y],
-        };
-    },
-};
+import { useLangStore } from "@/store/lang"
+const langStore = useLangStore()
 </script>
 
 <style scoped>

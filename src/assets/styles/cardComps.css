@@ -19,6 +19,7 @@
 
 .card__nav-link {
     white-space: nowrap;
+    text-transform: uppercase;
 }
 
 .card__nav-link--active {

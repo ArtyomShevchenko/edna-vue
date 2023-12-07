@@ -1,7 +1,6 @@
 @font-face {
     font-family: 'Cormorant Garamond';
     src: url(./CormorantGaramond-Light.woff2) format('woff2'),
-        url(./CormorantGaramond-Light.ttf) format("truetype");
 }
 
 @font-face {

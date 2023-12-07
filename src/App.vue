@@ -1,12 +1,24 @@
 <script setup>
 import { RouterView } from 'vue-router'
-import ToTopButton from "./components/ToTopButton.vue"
+import { watch, onBeforeMount } from "vue"
+import { useLangStore } from "@/store/lang"
+const langStore = useLangStore()
+
+watch(() => langStore.lang, (state) => {
+  console.log(state)
+  localStorage.setItem("lang", state)
+})
+
+onBeforeMount(() => {
+  if (localStorage.getItem("lang")) {
+    langStore.lang = localStorage.getItem("lang")
+  }
+})
 
 </script>
 
 <template>
   <RouterView />
-  <ToTopButton />
 </template>
 
 <style scoped></style>

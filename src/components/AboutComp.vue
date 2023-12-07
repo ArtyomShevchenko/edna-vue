@@ -1,12 +1,10 @@
-<script setup></script>
-
 <template>
     <section class="about">
         <div class="about__container">
             <div class="about__wrapper">
-                <div class="about-content">
+                <div class="about-content" v-if="langStore.lang === 'en'">
                     <article class="about-body">
-                        <h3 class="about-subtitle subtitle">about</h3>
+                        <h3 class="about-subtitle subtitle" v-if="showTitle">about</h3>
                         <div class="about-text">
                             <p>
                                 Welcome,
@@ -34,7 +32,7 @@
                         </div>
                         <div class="about-links">
                             <RouterLink to="/services">Services</RouterLink>
-                            <RouterLink to="/testimotional">TESTIMONIALS</RouterLink>
+                            <RouterLink to="/testimonials">Testimonials</RouterLink>
                             <RouterLink to="/book">Book</RouterLink>
                         </div>
                     </article>
@@ -43,10 +41,67 @@
                         <img class="about-img" src="../assets/images/img2.jpg" alt="Girl">
                     </div>
                 </div>
+
+                <div class="about-content" v-if="langStore.lang === 'ua'">
+                    <article class="about-body">
+                        <h3 class="about-subtitle subtitle" v-if="showTitle">Про нас</h3>
+                        <div class="about-text">
+                            <p>
+                                Ласкаво просимо,
+                            </p>
+                            <p>
+                                Я Една Шіндінде, персональний консультант зі стилю та редактор гардеробу.
+                            </p>
+                            <p>
+                                Я допомагаю жінкам усвідомити свою цінність, навчаючи, як складати основний гардероб
+                                своєю внутрішньою силою та красою.
+                            </p>
+                            <p>
+                                Найбільше моє чуття — бачити талант і силу в кожній жінці, яку зустрічаю. чи
+                                ви будуєте кар'єру, дбаєте про сім'ю, володієте бізнесом або насолоджуєтеся життям за своїми
+                                правилами - ви
+                                є a
+                                високоцінна жінка. Ви створили прецедент і повинні з гордістю ним володіти!
+                            </p>
+                            <p>
+                                Моє бачення полягає в тому, щоб кожна жінка беззаперечно відзначала свою красу, щоб її
+                                бачили та поважали
+                                без
+                                сумніватися у власній зовнішності. Стайлінг — лише один із способів досягти цього. І я не
+                                міг бажати кращого
+                                місія, як
+                                щоб вести вас у цій подорожі.
+                            </p>
+                        </div>
+                        <div class="about-links">
+                            <RouterLink to="/services">Послуги</RouterLink>
+                            <RouterLink to="/testimonials">Відгуки</RouterLink>
+                            <RouterLink to="/book">Замовлення</RouterLink>
+                        </div>
+                    </article>
+
+                    <div class="about-img-contain">
+                        <img class="about-img" src="../assets/images/img2.jpg" alt="Дівчина">
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 </template>
+
+<script setup>
+import { ref, onMounted } from "vue"
+import { useRoute } from "vue-router"
+import { useLangStore } from "@/store/lang"
+const langStore = useLangStore()
+const route = useRoute()
+
+const showTitle = ref(true)
+
+onMounted(() => {
+    if (route.path === "/about") showTitle.value = false
+})
+</script>
 
 <style>
 .about {

@@ -9,6 +9,9 @@
     --swiper-pagination-bullet-opacity: 1;
     --swiper-pagination-bullet-horizontal-gap: 8px;
     --swiper-pagination-bullet-vertical-gap: 6px;
+
+    --wrapper-width: 1300px;
+    --wrapper-padding-inline: 1rem;
 }
 
 /* styling query swiper */
@@ -62,7 +65,7 @@ h3,
     font-family: "Helvetica Neue";
     font-size: 12px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 500 !important;
     line-height: normal;
     letter-spacing: 0.48px;
     text-transform: uppercase;
@@ -113,8 +116,13 @@ span {
     color: inherit;
 }
 
+b {
+    font-family: "Helvetica Neue";
+    font-weight: 500 !important;
+}
+
 *[class*="__wrapper"] {
-    max-width: 1300px;
+    max-width: var(--wrapper-width);
     padding: 0 10px;
     margin: 0 auto;
 }

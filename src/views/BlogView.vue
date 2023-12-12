@@ -264,4 +264,10 @@ b {
         padding-inline: 16px;
     }
 }
+
+@media (max-width: 768px) {
+    .blog__images-two-columns {
+        gap: 0;
+    }
+}
 </style>

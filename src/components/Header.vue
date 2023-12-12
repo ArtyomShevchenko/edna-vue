@@ -5,6 +5,7 @@
                 <div class="header-content">
                     <LogoComp class="LogoComp" />
                     <ChangeLangButton />
+
                     <nav class="menu">
                         <input class="burget-input" type="checkbox" name="" id="" ref="checkbox" v-model="checked">
                         <div class="burger-icon">
@@ -290,6 +291,11 @@ watch(checked, (newChecked) => {
 
 @media(max-width: 768px) {
 
+    .header__container {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
     .navigation-shadow {
         display: none;
     }
@@ -307,6 +313,7 @@ watch(checked, (newChecked) => {
         transition: transform .4s ease-in-out;
         display: flex;
         justify-content: center;
+        background: #fff;
     }
 
     .menu-links {

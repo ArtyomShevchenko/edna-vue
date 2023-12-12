@@ -37,13 +37,6 @@
 import { useLangStore } from "@/store/lang"
 const langStore = useLangStore()
 
-
-
-
-
-
-
-
 function getImageUrl(name, ext) {
     return new URL(`../assets/images/${name}.${ext}`, import.meta.url).href
 }
@@ -147,6 +140,10 @@ function getImageUrl(name, ext) {
         width: 90%;
         align-self: center;
         margin: 40px auto 0px;
+    }
+
+    .greeting-title {
+        margin-left: 16px;
     }
 }
 

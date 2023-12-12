@@ -22,7 +22,7 @@
     height: 32px;
 }
 
-@media( max-width: 768px) {
+@media(max-width: 768px) {
     .logo {
         position: relative;
         z-index: 20;

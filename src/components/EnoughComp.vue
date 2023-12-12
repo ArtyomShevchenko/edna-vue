@@ -186,6 +186,7 @@ const langStore = useLangStore()
     align-items: center;
     position: relative;
     gap: 16px;
+    overflow: hidden;
 }
 
 .enough-img-contain {

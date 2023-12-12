@@ -99,7 +99,9 @@ const langStore = useLangStore()
 </script>
 
 <style scoped>
-.footer__container {}
+.footer__container {
+    padding-inline: 16px;
+}
 
 .footer__wrapper {}
 

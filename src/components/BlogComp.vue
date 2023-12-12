@@ -244,6 +244,10 @@ function scrolltoTop() {
     .blog__body {
         gap: 40px;
     }
+
+    .title {
+        margin-inline: 16px;
+    }
 }
 
 @media (max-width: 850px) {

@@ -148,8 +148,9 @@ onMounted(() => {
     position: absolute;
     top: 0;
     object-position: left top;
-
+    width: 100%;
     height: 100%;
+    object-fit: cover;
 }
 
 

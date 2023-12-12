@@ -95,6 +95,7 @@
                                 </a>
                             </div>
                         </div>
+
                         <div class="navigation-shadow" v-on:click="checked = !checked"></div>
                     </nav>
                 </div>
@@ -196,9 +197,8 @@ watch(checked, (newChecked) => {
 }
 
 .menu-body {
-    background-color: #fff;
-    padding: 100px 40px 40px 80px;
-    width: 50%;
+    padding: 100px 0px 40px 0px;
+    width: 100%;
     height: 100%;
     position: fixed;
     top: 0;
@@ -207,8 +207,9 @@ watch(checked, (newChecked) => {
     z-index: 5;
     transform: translateX(100%);
     transition: transform .4s ease-in-out;
-    display: flex;
-    justify-content: flex-end;
+    background: linear-gradient(90deg, transparent 50%, #fff 50%);
+    display: grid;
+    grid-template-columns: 1fr calc(var(--wrapper-width)/2) calc(var(--wrapper-width)/2) 1fr;
 }
 
 .menu-links {
@@ -217,6 +218,7 @@ watch(checked, (newChecked) => {
     align-items: flex-end;
     gap: 20px;
     padding-right: 0;
+    grid-column: 3/ 4;
 }
 
 .menu-link {

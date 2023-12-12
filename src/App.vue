@@ -6,7 +6,6 @@ import { useLangStore } from "@/store/lang"
 const langStore = useLangStore()
 
 watch(() => langStore.lang, (state) => {
-  console.log(state)
   localStorage.setItem("lang", state)
 })
 

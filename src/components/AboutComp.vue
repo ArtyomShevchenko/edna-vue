@@ -1,6 +1,6 @@
 <template>
-    <section class="about">
-        <div class="about__container">
+    <section class="about" ref="about">
+        <div class="about__container" ref="aboutContainer">
             <div class="about__wrapper">
                 <div class="about-content" v-if="langStore.lang === 'en'">
                     <article class="about-body">
@@ -101,12 +101,99 @@ const showTitle = ref(true)
 onMounted(() => {
     if (route.path === "/about") showTitle.value = false
 })
+
+// -----intersectionObserver
+// import { onMounted } from "vue";
+// import intersectionEntry from "@/observers/intersectionEntry";
+
+// const { observedElement, elementClass, interOptions, interCallback, observer } = intersectionEntry();
+
+// onMounted(() => {
+//     observedElement.value = document.querySelector(".about");
+//     elementClass.value = "about--visible";
+//     interOptions(null, 1);
+//     interCallback();
+//     observer.observe(observedElement.value);
+// });
+
+// onMounted(() => {
+// const observer = new IntersectionObserver((entryes) => {
+//     entryes.forEach((elem) => {
+//         if (elem.isIntersecting) {
+//             elem.target.classList.add("--observe-visible")
+//         } else {
+//             elem.target.classList.remove("--observe-visible")
+//         }
+//     })
+// }, {
+//     root: about.value,
+//     rootMargin: "0px",
+//     threshold: 1.0,
+// })
+
+// observer.observe(about.value)
+
+// var options = {
+//     root: about.value,
+//     rootMargin: "0px",
+//     threshold: 1,
+// };
+
+// var callback = function (entries, observer) {
+//     entries.forEach((entry) => {
+//         if (entry.isIntersecting) console.log(entry.isIntersecting)
+//         if (!entry.isIntersecting) console.log(entry.isIntersecting)
+//         // if (elem.isIntersecting) {
+//         //     console.log()
+//         //     elem.target.classList.add("--observe-visible")
+//         // } else {
+//         //     elem.target.classList.remove("--observe-visible")
+//         // }
+//     })
+// };
+
+// var observer = new IntersectionObserver(callback, options);
+// observer.observe(aboutContainer.value)
+// })
+
+import { useIntersectionObserver } from "@vueuse/core";
+const about = ref(null)
+const { stop } = useIntersectionObserver(
+    about,
+    ([{ isIntersecting, target }], observerElement) => {
+        if (isIntersecting) {
+            target.classList.add("about--visible");
+        } else {
+            target.classList.remove("about--visible");
+        }
+        observerElement.thresholds = .5
+    },
+)
 </script>
 
 <style>
 .about {
     overflow: hidden;
+    transition: all 1s;
+    opacity: 0;
 }
+
+.about--visible {
+    opacity: 1;
+    transition: all 1s;
+}
+
+/* .about {
+    overflow: hidden;
+    opacity: 0;
+    transition: all 1s ease;
+} */
+
+/* .about--visible {
+    opacity: 1;
+} */
+
+
 
 .about__container {
     position: relative;

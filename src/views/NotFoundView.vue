@@ -4,8 +4,9 @@ import { useRouter } from "vue-router"
 const router = useRouter()
 
 window.setTimeout(function () {
-    router.replace("/")
-}, 1e4);
+    // router.replace("/")
+    router.replace({ name: 'Home' })
+}, 5e3);
 </script>
 <template>
     <section class="not-found">

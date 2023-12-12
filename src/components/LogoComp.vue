@@ -1,6 +1,3 @@
-<script setup>
-</script>
-
 <template>
     <div class="logo">
         <slot>
@@ -8,6 +5,22 @@
         </slot>
     </div>
 </template>
+
+<script setup>
+import { onMounted } from "vue";
+import intersectionEntry from "@/observers/intersectionEntry";
+
+const { observedElement, elementClass, interOptions, interCallback, observer } =
+    intersectionEntry();
+onMounted(() => {
+    observedElement.value = document.querySelector(".logo");
+    elementClass.value = "visible";
+    interOptions(null, 1);
+    interCallback();
+    observer.observe(observedElement.value);
+});
+</script>
+
 
 <style scoped>
 .logo {
@@ -20,6 +33,10 @@
     letter-spacing: -2px;
     text-transform: uppercase;
     height: 32px;
+
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: all 1s ease;
 }
 
 @media(max-width: 768px) {
@@ -27,5 +44,10 @@
         position: relative;
         z-index: 20;
     }
+}
+
+.visible {
+    transform: translateX(-0);
+    opacity: 1;
 }
 </style>

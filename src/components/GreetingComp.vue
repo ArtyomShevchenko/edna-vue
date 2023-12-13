@@ -95,6 +95,13 @@ function getImageUrl(name, ext) {
     align-self: flex-end
 }
 
+
+@media(max-width: 1100px) {
+    h2 {
+        font-size: 40px;
+    }
+}
+
 @media (max-width: 768px) {
 
 

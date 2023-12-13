@@ -119,10 +119,6 @@ watch(checked, (newChecked) => {
     newChecked
         ? body.classList.add("disable-scroll")
         : body.classList.remove("disable-scroll")
-
-
-    // window.onscroll = function () { window.scrollTo(0, 0); }; //disable scroll
-    // window.onscroll = function () { }; //eneble scroll
 })
 </script>
 
@@ -259,7 +255,7 @@ watch(checked, (newChecked) => {
     opacity: 0;
     transition: opacity .2s ease .3s;
     /*pointer-events: none !important; */
-    visibility: hidden
+    visibility: hidden;
 }
 
 .burget-input:checked~.navigation-shadow {
@@ -289,8 +285,13 @@ watch(checked, (newChecked) => {
     transform: translateY(-50%) rotate(-45deg);
 }
 
-@media(max-width: 768px) {
+@media(max-width: 1300px) {
+    .menu-body {
+        grid-template-columns: 0 1fr 1fr 0;
+    }
+}
 
+@media(max-width: 768px) {
     .header__container {
         padding-left: 16px;
         padding-right: 16px;

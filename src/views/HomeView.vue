@@ -1,3 +1,18 @@
+<template>
+  <main>
+    <Header />
+    <GreetingComp />
+    <AboutComp ref="about" />
+    <EnoughComp />
+    <ApproachComp />
+    <ServicesComp />
+    <FeedbackComp />
+    <ContactForm />
+    <BlogComp />
+    <Footer />
+  </main>
+</template>
+
 <script setup>
 import Header from '@/components/Header.vue';
 import GreetingComp from '@/components/GreetingComp.vue';
@@ -11,22 +26,27 @@ import ContactForm from '@/components/ContactForm.vue';
 import BlogComp from '@/components/BlogComp.vue';
 
 
+// import { ref } from "vue"
+// import { useIntersectionObserver } from "@vueuse/core";
+// const about = ref(null)
+
+// const { stop } = useIntersectionObserver(
+//   about,
+//   ([{ isIntersecting, target }], observerElement) => {
+//     if (isIntersecting) {
+//       target.classList.add("--visible");
+//     } else {
+//       target.classList.remove("--visible");
+//     }
+//     observerElement.thresholds = .5
+//   },
+// )
+
+
 </script>
 
-<template>
-  <main>
-    <Header />
-    <GreetingComp />
-    <AboutComp />
-    <EnoughComp />
-    <ApproachComp />
-    <ServicesComp />
-    <FeedbackComp />
-    <ContactForm />
-    <BlogComp />
-
-    <Footer />
-  </main>
-</template>
-
-<style scoped></style>
+<style scoped>
+.--visible {
+  background-color: red;
+}
+</style>

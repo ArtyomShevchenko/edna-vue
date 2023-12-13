@@ -39,6 +39,10 @@
     line-height: 150%;
 }
 
+img {
+    user-select: none;
+}
+
 h1 {
     color: var(--edna-brown, #2D1B0D);
     font-family: "Cormorant Garamond";

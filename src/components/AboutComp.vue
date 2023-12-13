@@ -1,5 +1,6 @@
 <template>
-    <section class="about" ref="about">
+    <!-- <section class="about" ref="about"> -->
+    <section class="about">
         <div class="about__container" ref="aboutContainer">
             <div class="about__wrapper">
                 <div class="about-content" v-if="langStore.lang === 'en'">
@@ -156,43 +157,36 @@ onMounted(() => {
 // observer.observe(aboutContainer.value)
 // })
 
-import { useIntersectionObserver } from "@vueuse/core";
-const about = ref(null)
-const { stop } = useIntersectionObserver(
-    about,
-    ([{ isIntersecting, target }], observerElement) => {
-        if (isIntersecting) {
-            target.classList.add("about--visible");
-        } else {
-            target.classList.remove("about--visible");
-        }
-        observerElement.thresholds = .5
-    },
-)
+// import { useIntersectionObserver } from "@vueuse/core";
+// const about = ref(null)
+// const { stop } = useIntersectionObserver(
+//     about,
+//     ([{ isIntersecting, target }], observerElement) => {
+//         if (isIntersecting) {
+//             target.classList.add("about--visible");
+//         } else {
+//             target.classList.remove("about--visible");
+//         }
+//         observerElement.thresholds = .5
+//     },
+// )
 </script>
 
 <style>
 .about {
     overflow: hidden;
-    transition: all 1s;
-    opacity: 0;
-}
-
-.about--visible {
-    opacity: 1;
-    transition: all 1s;
 }
 
 /* .about {
     overflow: hidden;
+    transition: all 1s;
     opacity: 0;
-    transition: all 1s ease;
 } */
 
 /* .about--visible {
     opacity: 1;
+    transition: all 1s;
 } */
-
 
 
 .about__container {
